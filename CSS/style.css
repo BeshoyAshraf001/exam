@@ -1,0 +1,69 @@
+@layer cssStyle {
+  body {
+    background-color: #0d0d0d;
+  }
+  i,
+  img,
+  img + .inner {
+    cursor: pointer;
+  }
+
+  .nav_hide {
+    background-color: #0d0d0d;
+  }
+  .inner {
+    width: calc(100% - 24px);
+    height: 100%;
+    background-image: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+    );
+
+    top: 100%;
+    transition: all 0.5s;
+    border-radius: 32px;
+  }
+  .col-md-3:hover .inner {
+    top: 0;
+  }
+  .left_nav {
+    z-index: 999;
+  }
+  .col-md-3 {
+    z-index: 1;
+  }
+  section {
+    padding-block: 100px;
+  }
+  .loader {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: inline-block;
+    border-top: 4px solid #fff;
+    border-right: 4px solid transparent;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+  }
+  .loader::after {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border-left: 4px solid #ff3d00;
+    border-bottom: 4px solid transparent;
+    animation: rotation 0.5s linear infinite reverse;
+  }
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
